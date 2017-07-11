@@ -1,0 +1,30 @@
+{
+  "name": "Categoria",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "aa_categoria"
+    }
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": false
+    },
+    "codigo_tce": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+      "bem": {
+      "type": "belongsTo",
+      "model": "Bem",
+      "foreignKey": "categoriaId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

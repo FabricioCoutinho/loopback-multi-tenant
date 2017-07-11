@@ -1,0 +1,29 @@
+{
+  "name": "Bem",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "aa_bem"
+    }
+  },
+  "properties": {
+    "identificacao": {
+      "type": "string",
+      "required": false
+    },
+    "categoriaId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+     "categoria": {
+      "type": "hasOne",
+      "model": "Categoria"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

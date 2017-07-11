@@ -1,0 +1,13 @@
+{
+  "dsApplication": {
+    "host": "192.168.33.10",
+    "port": 5432,
+    "url": "",
+    "database": "geosiap_development",
+    "password": "root",
+    "name": "dsApplication",
+    "user": "root",
+    "connector": "postgresql",
+    "debug": true
+  }
+}
