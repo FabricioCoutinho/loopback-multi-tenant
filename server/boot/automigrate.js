@@ -9,8 +9,8 @@ module.exports = function(app) {
 	/*
 		TODO
 		- Obter a lista de schema do banco
-		- Validar se o arquivo existe de model existe
-		- Criar outros models com relations
+		- Validar se o arquivo de model existe
+		- Talvez colocar a parte de criação dos models e datasource no start da aplicação
 	*/
 	let tenants = ['public', 'guararema' ];
 
@@ -20,6 +20,7 @@ module.exports = function(app) {
 
 		// Altero o nome para a conexao do tenant
 		dbConf.name = tenant;
+		// dbConf.url = "127.0.0.1/api";
 
 		// Crio um nava conexao com o nome tenant
 		// console.log('migration', 'Criando a conexão para o tenant: ' + dbConf.name);
@@ -38,6 +39,7 @@ module.exports = function(app) {
        			let configModel = JSON.parse(data);
 
        			// Altero o model de acordo para não haver model com mesmo nome
+       			configModel.http = { "path" : "/" + tenant + "/" + configModel.name};
        			configModel.name = configModel.name + '_' + tenant;
        			configModel.options.postgresql.schema = tenant;
 
@@ -66,7 +68,7 @@ module.exports = function(app) {
 
 
 	});
-
+	// console.log('app', app.loopback.registry);
 	// rodo o migration para cada tenant
 	tenants.forEach(function(tenant) {
 		// console.log('migration', 'Rodando o migration para o tenant: ' + tenant);

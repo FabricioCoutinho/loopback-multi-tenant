@@ -7,6 +7,7 @@
       "./models"
     ],
     "mixins": [
+      "../node_modules/loopback-ds-timestamp-mixin",
       "loopback/common/mixins",
       "loopback/server/mixins",
       "../common/mixins",
@@ -15,6 +16,10 @@
   },
   "Categoria": {
     "dataSource": "dsApplication",
-    "public": true
-  }
+    "public": false
+  },
+  "Bem": {
+    "dataSource": "dsApplication",
+    "public": false
+  }  
 }

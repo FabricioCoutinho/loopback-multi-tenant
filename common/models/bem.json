@@ -2,10 +2,11 @@
   "name": "Bem",
   "base": "PersistedModel",
   "idInjection": true,
+  "plural": "Bens",
   "options": {
     "validateUpsert": true,
     "postgresql": {
-      "table": "aa_bem"
+      "table": "fro_bens"
     }
   },
   "properties": {
@@ -19,11 +20,11 @@
   },
   "validations": [],
   "relations": {
-     "categoria": {
-      "type": "hasOne",
-      "model": "Categoria"
-    }
   },
   "acls": [],
-  "methods": {}
+  "methods": {},
+  "mixins": {
+  "TimeStamp": true,
+  "Bem": true
+}
 }

@@ -6,14 +6,14 @@ module.exports = function(app) {
 	// app.use(bodyParser.urlencoded({ extended: true }));
 	var router = app.loopback.Router();
 
+/*
+	router.post('/api/Categoria', function(req, res) {
+		console.log('entrou no categoria post');
+		res.send('schema is post');
 
-	// router.post('/api/Categoria', function(req, res) {
-	// 	console.log('entrou no categoria post');
-	// 	res.send('schema is post');
+	});
 
-	// });
-
-	router.post('/api/Categoria/:schema', function(req, res) {
+	router.post('/api/{:schema}/Categoria/', function(req, res) {
 
 		// console.log('req', req.body);
 		var tenant = req.params.schema;
@@ -50,7 +50,7 @@ module.exports = function(app) {
 		res.send(msg);
 
 	});
-
+*/
 	app.use(router);
 
 }

@@ -1,30 +1,37 @@
 {
   "name": "Categoria",
   "base": "PersistedModel",
+  "plural": "categorias",
   "idInjection": true,
+  "public": false,
   "options": {
     "validateUpsert": true,
     "postgresql": {
-      "table": "aa_categoria"
+      "table": "fro_categorias"
     }
   },
   "properties": {
-    "nome": {
+    "categoria": {
       "type": "string",
       "required": false
     },
     "codigo_tce": {
       "type": "string"
-    }
+    },
+    "ano_modelo": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean"
+    }    
   },
   "validations": [],
   "relations": {
-      "bem": {
-      "type": "belongsTo",
-      "model": "Bem",
-      "foreignKey": "categoriaId"
-    }
   },
   "acls": [],
-  "methods": {}
+  "methods": {},
+   "mixins": {
+    "TimeStamp": true,
+    "Categoria": true
+  }
 }
